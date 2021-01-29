@@ -9,11 +9,15 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/EmpTS/bin/Debug/net5.0/EmpTS.dll",
+            "program": "${workspaceFolder}/src/API/bin/Debug/net5.0/API.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env" : {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_DETAILEDERRORS":"1"
+            }
         },
         {
             "name": ".NET Core Attach",

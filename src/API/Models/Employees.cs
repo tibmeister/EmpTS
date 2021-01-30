@@ -2,7 +2,7 @@ using System;
 
 namespace API.Models
 {
-    public class Employees
+    public class Employee
     {
         public long Id {get; set;}
         public string FirstName {get;set;}

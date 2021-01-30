@@ -24,14 +24,14 @@ namespace API.Controllers
 
         // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employees>>> GetEmployees()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             return await _context.Employees.ToListAsync();
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Employees>> GetEmployees(long id)
+        public async Task<ActionResult<Employee>> GetEmployees(long id)
         {
             var employees = await _context.Employees.FindAsync(id);
 
@@ -46,14 +46,14 @@ namespace API.Controllers
         // PUT: api/Employees/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmployees(long id, Employees employees)
+        public async Task<IActionResult> PutEmployees(long id, Employee employee)
         {
-            if (id != employees.Id)
+            if (id != employee.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(employees).State = EntityState.Modified;
+            _context.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -77,12 +77,12 @@ namespace API.Controllers
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Employees>> PostEmployees(Employees employees)
+        public async Task<ActionResult<Employee>> PostEmployees(Employee employee)
         {
-            _context.Employees.Add(employees);
+            _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEmployees", new { id = employees.Id }, employees);
+            return CreatedAtAction("GetEmployees", new { id = employee.Id }, employee);
         }
 
         // DELETE: api/Employees/5

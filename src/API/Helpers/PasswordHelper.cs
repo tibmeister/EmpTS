@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using API.Models;
-using Microsoft.EntityFrameworkCore;
 using NLog;
 
 namespace API.Helpers

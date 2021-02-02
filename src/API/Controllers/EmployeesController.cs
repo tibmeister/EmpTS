@@ -1,11 +1,8 @@
 // Created using the following commandline
 // dotnet aspnet-codegenerator controller -name EmployeesController -async -api -m Employees -dc EmployeesContext -outDir Controllers
-using System;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Models;

@@ -1,11 +1,8 @@
 using Xunit;
 using API.Controllers;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using API.Models;
-using System.Collections.Generic;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace API.UnitTests.Controllers

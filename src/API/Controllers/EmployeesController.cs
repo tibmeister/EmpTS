@@ -1,6 +1,7 @@
 // Created using the following commandline
 // dotnet aspnet-codegenerator controller -name EmployeesController -async -api -m Employees -dc EmployeesContext -outDir Controllers
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using API.Models;
+using Microsoft.Extensions.Logging;
 
 namespace API.Controllers
 {
@@ -16,16 +18,23 @@ namespace API.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly EmployeesContext _context;
-
-        public EmployeesController(EmployeesContext context)
+        private readonly ILogger<EmployeesController> _logger;
+        public EmployeesController(
+            EmployeesContext context,
+            ILogger<EmployeesController> logger
+        )
         {
             _context = context;
+            _logger = logger;
+            _logger.LogDebug(1, "NLog injected into HomeController");
         }
 
         // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
+            _logger.Log(LogLevel.Debug,"GetEmployees Called");
+
             return await _context.Employees.ToListAsync();
         }
 

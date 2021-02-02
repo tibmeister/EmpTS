@@ -22,7 +22,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
+    <PackageReference Include="NLog" Version="4.7.7" />
+    <PackageReference Include="NLog.Web.AspNetcore" Version="4.10.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <None Update="API_Log.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

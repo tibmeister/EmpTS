@@ -30,7 +30,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            _logger.Log(LogLevel.Debug,"GetEmployees Called");
+            _logger.Log(LogLevel.Information,"GetEmployees Called");
 
             return await _context.Employees.ToListAsync();
         }

@@ -26,7 +26,7 @@
     <PackageReference Include="NLog.Web.AspNetcore" Version="4.10.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <None Update="nlog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Preserve Newest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

@@ -15,7 +15,7 @@ namespace API.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly EmployeesContext _context;
-        private readonly ILogger<EmployeesController> _logger;
+        private ILogger<EmployeesController> _logger;
         public EmployeesController(
             EmployeesContext context,
             ILogger<EmployeesController> logger
@@ -23,14 +23,14 @@ namespace API.Controllers
         {
             _context = context;
             _logger = logger;
-            _logger.LogDebug(1, "NLog injected into HomeController");
+            _logger.LogDebug("NLog injected into HomeController");
         }
 
         // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
-            _logger.Log(LogLevel.Information,"GetEmployees Called");
+            _logger.LogInformation("GetEmployees Called");
 
             return await _context.Employees.ToListAsync();
         }

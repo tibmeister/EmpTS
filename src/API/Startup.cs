@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using API.Models;
+using NLog.Web;
+using System.IO;
+using API.Helpers;
 
 namespace API
 {
@@ -56,7 +59,6 @@ namespace API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
-
             //app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

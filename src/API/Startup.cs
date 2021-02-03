@@ -6,9 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using API.Models;
-using NLog.Web;
-using System.IO;
-using API.Helpers;
 
 namespace API
 {

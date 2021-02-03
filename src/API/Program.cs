@@ -13,13 +13,14 @@ namespace API
             var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
             try
             {
-                logger.Debug("init main");
+                logger.Info("Initialization");
                 CreateHostBuilder(args).Build().Run();
             }
             catch (Exception exception)
             {
                 //NLog: catch setup errors
                 logger.Error(exception, "Stopped program because of exception");
+                logger.Error(exception);
                 throw;
             }
             finally
